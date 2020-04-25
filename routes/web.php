@@ -38,6 +38,9 @@ Route::post('/book', function(Request $request){
   return redirect('/');
 });
 
+Route::get('/book/edit', 'BookController@edit')->name('book_edit');
+Route::post('/book/edit', 'BookController@update')->name('book_update');
+
 Route::delete('/book/{book}', function(Book $book){
   $book->delete();
 
